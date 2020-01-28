@@ -1,0 +1,12 @@
+[gd_scene format=2]
+
+[node name="UI_item_popup" type="Node2D"]
+
+[node name="ItemList" type="ItemList" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "[E] open"

@@ -1,0 +1,175 @@
+[gd_scene load_steps=91 format=2]
+
+[ext_resource path="res://Scripts/Character.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_idle_000_ergebnis.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_idle_001_ergebnis.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_idle_002_ergebnis.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_idle_003_ergebnis.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_idle_004_ergebnis.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_idle_005_ergebnis.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_idle_006_ergebnis.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_idle_007_ergebnis.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_idle_008_ergebnis.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_idle_009_ergebnis.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_idle_010_ergebnis.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_idle_011_ergebnis.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_idle_012_ergebnis.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_idle_013_ergebnis.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_idle_014_ergebnis.png" type="Texture" id=16]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_idle_015_ergebnis.png" type="Texture" id=17]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_idle_016_ergebnis.png" type="Texture" id=18]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_idle_017_ergebnis.png" type="Texture" id=19]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_idle_018_ergebnis.png" type="Texture" id=20]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_idle_019_ergebnis.png" type="Texture" id=21]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_walk_000_ergebnis.png" type="Texture" id=22]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_walk_001_ergebnis.png" type="Texture" id=23]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_walk_002_ergebnis.png" type="Texture" id=24]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_walk_003_ergebnis.png" type="Texture" id=25]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_walk_004_ergebnis.png" type="Texture" id=26]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_walk_005_ergebnis.png" type="Texture" id=27]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_walk_006_ergebnis.png" type="Texture" id=28]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_walk_007_ergebnis.png" type="Texture" id=29]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_walk_008_ergebnis.png" type="Texture" id=30]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_walk_009_ergebnis.png" type="Texture" id=31]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_walk_010_ergebnis.png" type="Texture" id=32]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_walk_011_ergebnis.png" type="Texture" id=33]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_slash_000_ergebnis.png" type="Texture" id=34]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_slash_001_ergebnis.png" type="Texture" id=35]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_slash_002_ergebnis.png" type="Texture" id=36]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_slash_003_ergebnis.png" type="Texture" id=37]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_slash_004_ergebnis.png" type="Texture" id=38]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_slash_005_ergebnis.png" type="Texture" id=39]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_slash_006_ergebnis.png" type="Texture" id=40]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_slash_007_ergebnis.png" type="Texture" id=41]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_slash_008_ergebnis.png" type="Texture" id=42]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_slash_009_ergebnis.png" type="Texture" id=43]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_two_hand_slash_000_ergebnis.png" type="Texture" id=44]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_two_hand_slash_001_ergebnis.png" type="Texture" id=45]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_two_hand_slash_002_ergebnis.png" type="Texture" id=46]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_two_hand_slash_003_ergebnis.png" type="Texture" id=47]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_two_hand_slash_004_ergebnis.png" type="Texture" id=48]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_two_hand_slash_005_ergebnis.png" type="Texture" id=49]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_two_hand_slash_006_ergebnis.png" type="Texture" id=50]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_two_hand_slash_007_ergebnis.png" type="Texture" id=51]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_two_hand_slash_008_ergebnis.png" type="Texture" id=52]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_two_hand_slash_009_ergebnis.png" type="Texture" id=53]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_run_000_ergebnis.png" type="Texture" id=54]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_run_001_ergebnis.png" type="Texture" id=55]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_run_002_ergebnis.png" type="Texture" id=56]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_run_003_ergebnis.png" type="Texture" id=57]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_run_004_ergebnis.png" type="Texture" id=58]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_run_005_ergebnis.png" type="Texture" id=59]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_run_006_ergebnis.png" type="Texture" id=60]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_run_007_ergebnis.png" type="Texture" id=61]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_run_008_ergebnis.png" type="Texture" id=62]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_run_009_ergebnis.png" type="Texture" id=63]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_run_010_ergebnis.png" type="Texture" id=64]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_run_011_ergebnis.png" type="Texture" id=65]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_jump_000_ergebnis.png" type="Texture" id=66]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_jump_001_ergebnis.png" type="Texture" id=67]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_jump_002_ergebnis.png" type="Texture" id=68]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_jump_003_ergebnis.png" type="Texture" id=69]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_jump_004_ergebnis.png" type="Texture" id=70]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_jump_005_ergebnis.png" type="Texture" id=71]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_jump_006_ergebnis.png" type="Texture" id=72]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_jump_007_ergebnis.png" type="Texture" id=73]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_jump_008_ergebnis.png" type="Texture" id=74]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_jump_009_ergebnis.png" type="Texture" id=75]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_stab_000_ergebnis.png" type="Texture" id=76]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_stab_001_ergebnis.png" type="Texture" id=77]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_stab_002_ergebnis.png" type="Texture" id=78]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_stab_003_ergebnis.png" type="Texture" id=79]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_stab_004_ergebnis.png" type="Texture" id=80]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_stab_005_ergebnis.png" type="Texture" id=81]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_stab_006_ergebnis.png" type="Texture" id=82]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_stab_007_ergebnis.png" type="Texture" id=83]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_stab_008_ergebnis.png" type="Texture" id=84]
+[ext_resource path="res://Graphics/Characters/Orc7/__orc_7_attack_stab_009_ergebnis.png" type="Texture" id=85]
+[ext_resource path="res://Graphics/light_white_320.png" type="Texture" id=86]
+[ext_resource path="res://Scenes/SimpleUI.tscn" type="PackedScene" id=87]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ) ],
+"loop": true,
+"name": "attack_slash",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ) ],
+"loop": true,
+"name": "attack_slash2",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ) ],
+"loop": false,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ) ],
+"loop": true,
+"name": "defend",
+"speed": 5.0
+} ]
+
+[sub_resource type="ImageTexture" id=3]
+
+[sub_resource type="CapsuleShape2D" id=2]
+height = 34.1873
+
+[node name="Player_kinematic" type="KinematicBody2D"]
+position = Vector2( 415.271, 196.701 )
+z_index = 1
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "attack_slash"
+frame = 3
+speed_scale = 3.0
+
+[node name="weapon" type="Position2D" parent="AnimatedSprite"]
+position = Vector2( -20.2581, 23.9427 )
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 86 )
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 30.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+position = Vector2( 11.7021, 46.7064 )
+rotation = -3.13652
+amount = 1
+lifetime = 0.83
+local_coords = false
+texture = SubResource( 3 )
+gravity = Vector2( 0, -30 )
+radial_accel = 45.0
+color = Color( 0.627451, 0.627451, 0.627451, 0.490196 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 12.6524, 23.0454 )
+shape = SubResource( 2 )
+
+[node name="UI_keys" parent="." instance=ExtResource( 87 )]
+position = Vector2( -20.2429, 55.7599 )

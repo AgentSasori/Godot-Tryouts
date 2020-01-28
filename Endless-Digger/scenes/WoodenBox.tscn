@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://graphics/objects/CrateBarrel3.png" type="Texture" id=1]
+[ext_resource path="res://scenes/ui_show_label.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 8, 46, 337, 332 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 2.62914 )
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 73.7827
+
+[node name="WoodenBox" type="RigidBody2D"]
+position = Vector2( -4, 0 )
+gravity_scale = 10.0
+continuous_cd = 2
+can_sleep = false
+angular_velocity = 10.0
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.0752718, 0.0532727 )
+scale = Vector2( 0.2, 0.2 )
+texture = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 3.32, 12.48 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, 0.214639 )
+shape = SubResource( 3 )
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_Area2D_area_entered"]

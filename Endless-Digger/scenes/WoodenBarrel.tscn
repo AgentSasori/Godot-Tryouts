@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://graphics/objects/CrateBarrel3.png" type="Texture" id=1]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 390, 14, 308, 366 )
+
+[node name="WoodenBarrel" type="RigidBody2D"]
+gravity_scale = 3.0
+applied_torque = -5.0
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.114691, -0.0349537 )
+scale = Vector2( 0.2, 0.2 )
+texture = SubResource( 1 )
+offset = Vector2( 0.573454, 0.174768 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -21.9881, -35.8236, -30.556, 0.242475, -22.2663, 35.3259, 22.5873, 35.3259, 30.729, -0.201619, 21.6991, -35.8772 )

@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Graphics/Objects/CrateBarrel3.png" type="Texture" id=1]
+
+[node name="Barrel" type="RigidBody2D"]
+mass = 0.918367
+gravity_scale = 0.0
+linear_damp = 9.0
+applied_force = Vector2( 1, 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.0428051, 0.0138607 )
+rotation = 3.14159
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 360, 0, 360, 400 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 11.1629, -15.9185, -12.3745, -15.8454, -15.4446, -0.129452, -12.3014, 16.3906, 11.236, 16.5368, 14.8178, 0.0167429 )
