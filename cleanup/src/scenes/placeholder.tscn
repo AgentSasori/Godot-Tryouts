@@ -1,0 +1,30 @@
+[gd_scene format=2]
+
+[node name="Node" type="Node"]
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -3634.0
+margin_top = -3136.0
+margin_right = 3637.0
+margin_bottom = 3135.0
+color = Color( 0, 0.0745098, 0.560784, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1447.0
+margin_top = -1329.0
+margin_right = 1450.0
+margin_bottom = 1328.0
+color = Color( 0.596078, 0.6, 0.466667, 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -409.0
+margin_top = -349.0
+margin_right = 410.0
+margin_bottom = 349.0
+color = Color( 0.278431, 0.376471, 0.266667, 1 )

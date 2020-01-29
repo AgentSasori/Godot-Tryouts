@@ -1,0 +1,154 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/themes/RobotoRegular.tres" type="Theme" id=1]
+[ext_resource path="res://src/scenes/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://src/scenes/NewGameMenu.gd" type="Script" id=3]
+[ext_resource path="res://src/scenes/LoadGameMenu.gd" type="Script" id=4]
+[ext_resource path="res://src/scenes/JoinServerMenu.gd" type="Script" id=5]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.215686, 0.215686, 0.215686, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_top = -300.0
+margin_right = 180.0
+margin_bottom = -40.0
+custom_constants/separation = 10
+
+[node name="Continue" type="Button" parent="Menu"]
+margin_right = 140.0
+margin_bottom = 35.0
+mouse_default_cursor_shape = 2
+size_flags_vertical = 3
+text = "Continue"
+
+[node name="NewGame" type="Button" parent="Menu"]
+margin_top = 45.0
+margin_right = 140.0
+margin_bottom = 80.0
+mouse_default_cursor_shape = 2
+size_flags_vertical = 3
+text = "New Game"
+
+[node name="LoadGame" type="Button" parent="Menu"]
+margin_top = 90.0
+margin_right = 140.0
+margin_bottom = 125.0
+mouse_default_cursor_shape = 2
+size_flags_vertical = 3
+text = "Load Game"
+
+[node name="JoinServer" type="Button" parent="Menu"]
+margin_top = 135.0
+margin_right = 140.0
+margin_bottom = 170.0
+mouse_default_cursor_shape = 2
+size_flags_vertical = 3
+text = "Join Server"
+
+[node name="Settings" type="Button" parent="Menu"]
+margin_top = 180.0
+margin_right = 140.0
+margin_bottom = 215.0
+mouse_default_cursor_shape = 2
+size_flags_vertical = 3
+text = "Settings"
+
+[node name="Quit" type="Button" parent="Menu"]
+margin_top = 225.0
+margin_right = 140.0
+margin_bottom = 260.0
+mouse_default_cursor_shape = 2
+size_flags_vertical = 3
+text = "Quit"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -514.0
+margin_top = 40.0
+margin_right = -40.0
+margin_bottom = -40.0
+
+[node name="NewGameMenu" type="Control" parent="PanelContainer"]
+visible = false
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 467.0
+margin_bottom = 513.0
+script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="PanelContainer/NewGameMenu"]
+margin_right = 87.0
+margin_bottom = 28.0
+text = "New Game"
+
+[node name="CreateGame" type="Button" parent="PanelContainer/NewGameMenu"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -151.0
+margin_top = -34.0
+text = "Create Game"
+
+[node name="LoadGameMenu" type="Control" parent="PanelContainer"]
+visible = false
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 657.0
+margin_bottom = 513.0
+script = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="PanelContainer/LoadGameMenu"]
+margin_right = 40.0
+margin_bottom = 28.0
+text = "Load Game"
+
+[node name="JoinServerMenu" type="Control" parent="PanelContainer"]
+visible = false
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 657.0
+margin_bottom = 513.0
+script = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="PanelContainer/JoinServerMenu"]
+margin_right = 40.0
+margin_bottom = 28.0
+text = "Join Server"
+
+[node name="ServerList" type="VBoxContainer" parent="PanelContainer/JoinServerMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 33.0
+custom_constants/separation = 10
+
+[node name="GameHash" type="Label" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 50.0
+margin_bottom = 38.0
+[connection signal="pressed" from="Menu/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Menu/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Menu/LoadGame" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="Menu/JoinServer" to="." method="_on_join_server_pressed"]
+[connection signal="pressed" from="Menu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Menu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="PanelContainer/NewGameMenu/CreateGame" to="PanelContainer/NewGameMenu" method="_on_create_game_pressed"]

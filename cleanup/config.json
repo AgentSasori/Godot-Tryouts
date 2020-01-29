@@ -1,0 +1,6 @@
+{
+	"server" : {
+		"port": 4242,
+		"maxPlayerCount": 10,
+	}
+}
