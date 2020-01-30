@@ -15,3 +15,7 @@ func _ready():
 
 func _on_Area2D_area_entered(area):
 	pass
+
+
+func Kick(_velocity):
+	$WoddenBox.Kick(_velocity)

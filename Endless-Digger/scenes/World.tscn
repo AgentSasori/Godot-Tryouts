@@ -1,79 +1,80 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scenes/stone_5.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/WoodenBox.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/WoodenBarrel.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/collectables/Crystal01.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/tiles/TileMap.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/tiles/TileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/objects/stone_5.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/collectables/Crystal01.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/objects/WoodenBox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/objects/WoodenBarrel.tscn" type="PackedScene" id=5]
 
 [node name="World" type="Node2D"]
 
-[node name="Stones" type="Node" parent="."]
-
-[node name="stone_5" parent="Stones" instance=ExtResource( 1 )]
-position = Vector2( 210.692, 216.365 )
-
-[node name="stone_6" parent="Stones" instance=ExtResource( 1 )]
-position = Vector2( 221.575, 174.193 )
-
-[node name="stone_7" parent="Stones" instance=ExtResource( 1 )]
-position = Vector2( 222.935, 115.697 )
-
-[node name="stone_8" parent="Stones" instance=ExtResource( 1 )]
-position = Vector2( 628.327, 421.781 )
-
-[node name="stone_9" parent="Stones" instance=ExtResource( 1 )]
-position = Vector2( 539.903, 159.229 )
-
-[node name="WoodenBox" parent="." instance=ExtResource( 2 )]
-position = Vector2( 519.663, 65.298 )
-
-[node name="WoodenBox3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 439.401, -136.037 )
-
-[node name="WoodenBox4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 846.152, -125.154 )
-angular_velocity = 0.0
-
-[node name="WoodenBox5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 846.152, -201.335 )
-angular_velocity = 0.0
-
-[node name="WoodenBox6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 847.513, -274.796 )
-angular_velocity = 0.0
-
-[node name="WoodenBox2" parent="." instance=ExtResource( 2 )]
-position = Vector2( -40.8112, 389.067 )
-
-[node name="WoodenBarrel" parent="." instance=ExtResource( 3 )]
-position = Vector2( 261.192, 401.31 )
-
-[node name="WoodenBarrel2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1.36039, -122.434 )
-
-[node name="WoodenBarrel3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 69.3791, -126.515 )
-
-[node name="WoodenBarrel4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1191.69, -125.154 )
-
-[node name="WoodenBarrel5" parent="." instance=ExtResource( 3 )]
-position = Vector2( 391.788, 492.455 )
-
-[node name="Crystal01" parent="." instance=ExtResource( 4 )]
-position = Vector2( 643.457, 146.92 )
-
-[node name="Crystal02" parent="." instance=ExtResource( 4 )]
-position = Vector2( -629.853, -107.47 )
-
-[node name="Crystal03" parent="." instance=ExtResource( 4 )]
-position = Vector2( 62.5772, -185.011 )
-
-[node name="Crystal04" parent="." instance=ExtResource( 4 )]
-position = Vector2( -554.638, 337.004 )
-
 [node name="TileMap" parent="." groups=[
 "tiles",
-] instance=ExtResource( 5 )]
-tile_data = PoolIntArray( -458763, 0, 0, -458762, 0, 0, -458761, 0, 0, -458760, 0, 0, -458759, 0, 0, -458758, 0, 0, -458757, 0, 0, -458756, 0, 0, -458755, 0, 0, -458754, 0, 0, -458753, 0, 0, -524288, 0, 0, -524287, 0, 0, -524286, 0, 0, -524285, 0, 0, -524284, 0, 0, -524283, 0, 0, -524282, 0, 0, -524281, 0, 0, -524280, 0, 0, -524279, 0, 0, -524278, 0, 0, -524277, 0, 0, -524276, 0, 0, -524275, 0, 0, -524274, 0, 0, -524273, 0, 0, -524272, 0, 0, -524271, 0, 0, -524270, 0, 0, -524269, 0, 0, -393227, 0, 0, -458733, 0, 0, -327691, 0, 0, -327685, 0, 0, -327684, 0, 0, -327683, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393210, 0, 0, -393209, 0, 0, -393197, 0, 0, -262155, 0, 0, -327674, 0, 0, -327673, 0, 0, -327672, 0, 0, -327661, 0, 0, -196619, 0, 0, -196618, 0, 0, -196615, 0, 0, -262143, 0, 0, -262142, 0, 0, -262138, 0, 0, -262137, 0, 0, -262136, 0, 0, -262133, 0, 0, -262132, 0, 0, -262131, 0, 0, -262125, 0, 0, -131083, 0, 0, -196601, 0, 0, -196593, 0, 0, -196592, 0, 0, -196591, 0, 0, -196590, 0, 0, -196589, 0, 0, -65547, 0, 0, -65542, 0, 0, -65541, 0, 0, -65540, 0, 0, -11, 0, 0, -9, 0, 0, -8, 0, 0, -7, 0, 0, -1, 0, 0, -65536, 0, 0, -65531, 0, 0, -65527, 0, 0, -65526, 0, 0, -65524, 0, 0, -65523, 0, 0, 65525, 0, 0, 65534, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 131061, 0, 0, 65550, 0, 0, 65551, 0, 0, 65552, 0, 0, 65553, 0, 0, 65554, 0, 0, 65555, 0, 0, 196597, 0, 0, 196598, 0, 0, 196599, 0, 0, 196600, 0, 0, 196603, 0, 0, 196604, 0, 0, 196605, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131085, 0, 0, 262136, 0, 0, 196610, 0, 0, 196620, 0, 0, 327672, 0, 0, 327673, 0, 0, 262155, 0, 0, 393209, 0, 0, 393210, 0, 0, 393211, 0, 0, 393212, 0, 0, 393213, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 393221, 0, 0, 393222, 0, 0 )
+] instance=ExtResource( 1 )]
+tile_data = PoolIntArray( -458763, 1, 0, -458762, 1, 0, -458761, 1, 0, -458760, 1, 0, -458759, 1, 0, -458758, 1, 0, -458757, 1, 0, -458756, 1, 0, -458755, 1, 0, -458754, 1, 0, -458753, 1, 0, -524288, 1, 0, -524287, 1, 0, -524286, 1, 0, -524285, 1, 0, -524284, 1, 0, -524283, 1, 0, -524282, 1, 0, -524281, 1, 0, -524280, 1, 0, -524279, 1, 0, -524278, 1, 0, -524277, 1, 0, -524276, 1, 0, -524275, 1, 0, -524274, 1, 0, -524273, 1, 0, -524272, 1, 0, -524271, 1, 0, -524270, 1, 0, -524269, 1, 0, -393227, 1, 0, -458733, 1, 0, -327691, 1, 0, -327685, 2, 0, -327684, 2, 0, -327683, 2, 0, -327682, 2, 0, -327681, 2, 0, -393216, 2, 0, -393197, 1, 0, -262155, 1, 0, -327661, 1, 0, -196619, 1, 0, -196618, 2, 0, -196615, 2, 0, -262143, 2, 0, -262142, 2, 0, -262138, 2, 0, -262137, 2, 0, -262136, 2, 0, -262133, 2, 0, -262132, 2, 0, -262131, 2, 0, -262125, 1, 0, -131083, 1, 0, -196601, 0, 0, -196593, 2, 0, -196592, 2, 0, -196591, 2, 0, -196590, 2, 0, -196589, 1, 0, -65547, 1, 0, -65542, 2, 0, -65541, 2, 0, -65540, 2, 0, -11, 1, 0, -9, 2, 0, -8, 2, 0, -7, 2, 0, -1, 2, 0, -65536, 2, 0, -65531, 2, 0, -65527, 2, 0, -65526, 2, 0, -65524, 2, 0, -65523, 2, 0, 65525, 1, 0, 65534, 2, 0, 2, 2, 0, 19, 2, 0, 20, 2, 0, 21, 2, 0, 131061, 1, 0, 65550, 2, 0, 65551, 2, 0, 65552, 2, 0, 65553, 2, 0, 65554, 2, 0, 65555, 1, 0, 65556, 1, 0, 196597, 1, 0, 196598, 2, 0, 196599, 0, 0, 196600, 2, 0, 196603, 2, 0, 196604, 2, 0, 196605, 2, 0, 131077, 2, 0, 131078, 2, 0, 131079, 2, 0, 131080, 2, 0, 131081, 2, 0, 131085, 2, 0, 131086, 1, 0, 131087, 1, 0, 131088, 1, 0, 131089, 1, 0, 131090, 1, 0, 262133, 1, 0, 262134, 1, 0, 262135, 0, 0, 262136, 1, 0, 196610, 2, 0, 196620, 2, 0, 196621, 1, 0, 196622, 1, 0, 327669, 1, 0, 327670, 1, 0, 327671, 0, 0, 327672, 1, 0, 327673, 2, 0, 262155, 2, 0, 262156, 1, 0, 262157, 1, 0, 393205, 1, 0, 393206, 1, 0, 393207, 0, 0, 393208, 1, 0, 393209, 1, 0, 393210, 2, 0, 393211, 2, 0, 393212, 2, 0, 393213, 2, 0, 393214, 2, 0, 393215, 2, 0, 327680, 2, 0, 327681, 2, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 0, 0, 327689, 0, 0, 327690, 2, 0, 327691, 1, 0, 327692, 1, 0, 458741, 1, 0, 458742, 1, 0, 458743, 0, 0, 458744, 1, 0, 458745, 1, 0, 458746, 1, 0, 458747, 1, 0, 458748, 1, 0, 458749, 1, 0, 458750, 1, 0, 458751, 1, 0, 393216, 1, 0, 393217, 1, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 1, 0, 393223, 1, 0, 393224, 0, 0, 393225, 0, 0, 393226, 1, 0, 393227, 1, 0, 393228, 1, 0, 524277, 1, 0, 524278, 1, 0, 524279, 0, 0, 524280, 1, 0, 524281, 1, 0, 524282, 1, 0, 524283, 1, 0, 524284, 1, 0, 524285, 1, 0, 524286, 1, 0, 524287, 1, 0, 458752, 1, 0, 458753, 1, 0, 458754, 1, 0, 458755, 1, 0, 458756, 1, 0, 458757, 1, 0, 458758, 1, 0, 458759, 1, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458763, 1, 0, 458764, 1, 0 )
+
+[node name="Stones" type="Node" parent="."]
+
+[node name="stone_5" parent="Stones" instance=ExtResource( 2 )]
+position = Vector2( 210.692, 216.365 )
+
+[node name="stone_6" parent="Stones" instance=ExtResource( 2 )]
+position = Vector2( 221.575, 174.193 )
+
+[node name="stone_7" parent="Stones" instance=ExtResource( 2 )]
+position = Vector2( 222.935, 115.697 )
+
+[node name="stone_8" parent="Stones" instance=ExtResource( 2 )]
+position = Vector2( 628.327, 421.781 )
+
+[node name="stone_9" parent="Stones" instance=ExtResource( 2 )]
+position = Vector2( 539.903, 159.229 )
+
+[node name="Collectables" type="Node" parent="."]
+
+[node name="Crystal01" parent="Collectables" instance=ExtResource( 3 )]
+position = Vector2( -304.724, 159.163 )
+
+[node name="Crystal02" parent="Collectables" instance=ExtResource( 3 )]
+position = Vector2( -629.853, -107.47 )
+
+[node name="Crystal03" parent="Collectables" instance=ExtResource( 3 )]
+position = Vector2( 62.5772, -185.011 )
+
+[node name="Crystal04" parent="Collectables" instance=ExtResource( 3 )]
+position = Vector2( -553.278, 337.004 )
+
+[node name="Container" type="Node" parent="."]
+
+[node name="WoodenBox2" parent="Container" instance=ExtResource( 4 )]
+position = Vector2( -40.8112, 389.067 )
+
+[node name="WoodenBox3" parent="Container" instance=ExtResource( 4 )]
+position = Vector2( 224.163, -32.9878 )
+
+[node name="WoodenBox4" parent="Container" instance=ExtResource( 4 )]
+position = Vector2( 690.645, 139.959 )
+
+[node name="WoodenBox5" parent="Container" instance=ExtResource( 4 )]
+position = Vector2( 690.645, 71.7326 )
+
+[node name="WoodenBox6" parent="Container" instance=ExtResource( 4 )]
+position = Vector2( 690.645, 1.91902 )
+
+[node name="WoodenBox7" parent="Container" instance=ExtResource( 4 )]
+position = Vector2( 262.243, -386.816 )
+
+[node name="WoodenBarrel" parent="Container" instance=ExtResource( 5 )]
+position = Vector2( 391.192, 331.31 )
+
+[node name="WoodenBarrel2" parent="Container" instance=ExtResource( 5 )]
+position = Vector2( 1.36039, -122.434 )
+
+[node name="WoodenBarrel3" parent="Container" instance=ExtResource( 5 )]
+position = Vector2( 69.3791, -126.515 )
+
+[node name="WoodenBarrel4" parent="Container" instance=ExtResource( 5 )]
+position = Vector2( 1191.69, -125.154 )
+
+[node name="WoodenBarrel5" parent="Container" instance=ExtResource( 5 )]
+position = Vector2( 390.788, 404.455 )

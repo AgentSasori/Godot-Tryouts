@@ -1,16 +1,22 @@
 extends KinematicBody2D
 
+#testsignal
+signal stump(vel)
+
 const MAX_INVENTORY_SPACE = 9
 
 # Define moving
-export var walk_speed = 110
-export var run_speed = 250 # this value will be ADDED to the move_speed!
-export var use_gravity = true
-export var jump_power = 740 # keep in mind: changing has effect on _is_moving() ... to long in the air will trigger that method! maybe change animation-speed?
+export var walk_speed := 110
+export var run_speed := 250 # this value will be ADDED to the move_speed!
+export var use_gravity := true
+export var jump_power := 740 # keep in mind: changing has effect on _is_moving() ... to long in the air will trigger that method! maybe change animation-speed?
 
-var velocity = Vector2()
-var gravity = 1500
-var move_speed = walk_speed
+var velocity := Vector2()
+var gravity := 1500
+var move_speed := walk_speed
+
+var area2D_contact = RigidBody2D
+var body_contact = RigidBody2D
 
 onready var raycasts = $RayCast2D
 onready var anim_player = $AnimatedSprite
@@ -59,10 +65,14 @@ func _get_input():
 		velocity.y = -jump_power
 	elif Input.is_action_just_pressed("ui_hit") && _is_grounded():
 		anim_player.play("hit")
+		_hit()
 	elif Input.is_action_just_pressed("ui_hit"):
 		anim_player.play("attack")
+		_hit()
 	elif Input.is_action_just_pressed("ui_up"):
 		anim_player.play("attackup")
+		print("Player sumping...signal!")
+		emit_signal("stump", velocity)
 	elif Input.is_action_just_pressed("ui_use"):
 		anim_player.play("stab")
 	
@@ -91,6 +101,7 @@ func _is_grounded():
 			velocity.y = 0
 			# lift up a bit to prevent flipping the object
 			position.y -= 1
+			col.sleeping = true
 		return true		
 	return false
 	
@@ -114,11 +125,24 @@ func _player_label_bottom(text:String):
 # Check for near-area
 func _on_Area2D_area_entered(area):
 	print("area2d entered: ", area)
+	area2D_contact = area
 	#pass # Replace with function body.
 
 func _on_Area2D_area_exited(area):
 	print("area2d exited: ", area)
+	area2D_contact = null
 
 
 func _on_Area2D_body_entered(body):
 	print("Body entered: ", body)
+	body_contact = body
+	
+func _on_Area2D_body_exited(_body):
+	body_contact = null
+
+func _hit():
+	#if area2D_contact.is_in_group("physical_object"):
+	#	area2D_contact.Kick()
+	pass
+		
+
