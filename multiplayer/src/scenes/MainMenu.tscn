@@ -100,10 +100,10 @@ __meta__ = {
 
 [node name="NewGameMenu" type="Control" parent="PanelContainer"]
 visible = false
-margin_left = 19.0
-margin_top = 21.0
-margin_right = 456.0
-margin_bottom = 500.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 467.0
+margin_bottom = 513.0
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -118,9 +118,9 @@ __meta__ = {
 }
 
 [node name="Details" type="Control" parent="PanelContainer/NewGameMenu"]
-margin_top = 40.0
+margin_top = 34.0
 margin_right = 460.0
-margin_bottom = 198.0
+margin_bottom = 192.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -219,13 +219,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ServerList" type="VBoxContainer" parent="PanelContainer/JoinServerMenu"]
+anchor_right = 1.0
+margin_top = 34.0
+margin_bottom = 468.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label" type="Label" parent="PanelContainer/JoinServerMenu"]
-margin_right = 40.0
+margin_right = 95.0
 margin_bottom = 28.0
 text = "Join Server"
 
-[node name="ServerList" type="VBoxContainer" parent="PanelContainer/JoinServerMenu"]
-margin_top = 33.0
+[node name="AddServer" type="Button" parent="PanelContainer/JoinServerMenu"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -151.0
+margin_top = -32.0
+margin_bottom = -2.0
+text = "Add Server"
 [connection signal="pressed" from="Menu/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="Menu/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="Menu/LoadGame" to="." method="_on_load_game_pressed"]
@@ -235,3 +250,4 @@ margin_top = 33.0
 [connection signal="focus_exited" from="PanelContainer/NewGameMenu/Details/InputName" to="PanelContainer/NewGameMenu" method="_on_input_name_focus_exited"]
 [connection signal="pressed" from="PanelContainer/NewGameMenu/Details/InputSeed/NewRandomeSeed" to="PanelContainer/NewGameMenu" method="_on_new_randome_seed_pressed"]
 [connection signal="pressed" from="PanelContainer/NewGameMenu/CreateGame" to="PanelContainer/NewGameMenu" method="_on_create_game_pressed"]
+[connection signal="pressed" from="PanelContainer/JoinServerMenu/AddServer" to="PanelContainer/JoinServerMenu" method="_on_add_server_pressed"]

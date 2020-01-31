@@ -11,7 +11,7 @@ const PATH_SPAWN_WORLD_MAP  = PATH_GAME_NODE + "/" + SPAWN_WORD + "/Map"
 
 var _config_file := "config.json"
 
-var config : Dictionary = FileHandler.read_json_file_as_dictionary(_config_file)
+var config : Dictionary = FileHandler.read_json_file(_config_file)
 var connected_clients : Dictionary = {}
 var persistent_client_data : Dictionary = {}
 var spawn_position = Vector2(400,200)# tmp property

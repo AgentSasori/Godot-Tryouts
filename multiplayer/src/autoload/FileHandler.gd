@@ -2,11 +2,15 @@ extends Node
 class_name FielHandler
 
 # Read config file
-func read_json_file_as_dictionary(path:String) -> Dictionary:
-	var file = File.new()
-	file.open(path, file.READ)
-	var result = JSON.parse(file.get_as_text()).get_result()
-	file.close()
+func read_json_file(file_path:String):
+	var file   = File.new()
+	var result = false
+	
+	if file.file_exists(file_path):
+		file.open(file_path, file.READ)
+		result = JSON.parse(file.get_as_text()).get_result()
+		file.close()
+	
 	return result
 
 # Create or read the unique id of the game
@@ -27,3 +31,13 @@ func read_game_hash() -> String:
 	file.close()
 	
 	return result
+
+func save_data_as_json(file_path:String, data):
+	var file:File = File.new()
+	var content = JSON.print(data)
+	
+	file.open(file_path, file.WRITE_READ)
+	
+	file.store_string(content)
+	
+	file.close()

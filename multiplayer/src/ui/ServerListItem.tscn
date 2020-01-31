@@ -15,7 +15,7 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 250.0
+margin_right = 230.0
 margin_bottom = 37.0
 custom_constants/separation = 20
 
@@ -25,8 +25,8 @@ margin_right = 36.0
 margin_bottom = 29.0
 mouse_filter = 0
 mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
 text = "Test"
-percent_visible = -0.25
 
 [node name="Join" type="Button" parent="HBoxContainer"]
 margin_left = 56.0
