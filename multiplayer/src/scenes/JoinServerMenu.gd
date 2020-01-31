@@ -24,7 +24,6 @@ func _load_server_list():
 	]
 	
 func _join_server(ip:String, port:int):
-	print("clicked")
 	Globals.set_self_player_name("test")
 	
 	var loadingscreen = load("res://src/scenes/Loadingscreen.tscn").instance()

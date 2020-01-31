@@ -10,9 +10,6 @@ func init_game(peer_id:int, data:Dictionary):
 	var map    = generate_map()
 	var player = create_player(str(peer_id), data, peer_id)
 	
-#	todo spawn position should be calculated after map generation
-	player.player_position = Globals.spawn_position
-	
 #	Only set the camera of ur player node to current camera
 	player.get_node("PlayerView").current = true
 	
@@ -22,8 +19,9 @@ func init_game(peer_id:int, data:Dictionary):
 	
 	get_node(Globals.PATH_PLAYER_NODES).add_child(player)
 	
-	print(data)
-	player.position = data["position"]
+#	todo spawn position should be calculated after map generation
+	player.player_position = Globals.spawn_position
+	Globals.set_self_position(Globals.spawn_position)
 	
 	get_tree().change_scene_to(map)
 	get_node("/root/Loadingscreen").queue_free()
@@ -66,10 +64,8 @@ func create_player(node_name:String, player_data:Dictionary, network_master:int)
 	
 	player.player_position = player_data["position"]
 	
-	Globals.debug(self.get_script().get_path(), "network_master " + str(network_master))
-	
 	return player
 
 func save_game():
 	if get_tree().is_network_server():
-		print("game save")
+		print("game saved")

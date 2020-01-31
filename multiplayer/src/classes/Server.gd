@@ -55,9 +55,11 @@ func _sync_clients(new_client_id, new_client_data):
 			# Send new client data to existing clients
 			rpc_id(client_id, "_register_client", new_client_id, new_client_data)
 		
-		Globals.debug(self.get_script().get_path(), "Send existing client data to new client " + str(new_client_id))
+		Globals.debug(self.get_script().get_path(), "Send existing client data to new client " + str(new_client_id) + "\n" + str(Globals.connected_clients[client_id]))
 		#Send existing clients data to new client
 		rpc_id(new_client_id, "_register_client", client_id, Globals.connected_clients[client_id])
+	
+	Globals.connected_clients[new_client_id] = new_client_data
 
 # Recieve client data from new connected client
 remote func _recieve_client_data(data):
@@ -68,19 +70,19 @@ remote func _recieve_client_data(data):
 #	If client was already on server use persisten client data. If client was not on the server
 #	before use new client data
 	if Globals.persistent_client_data.has(data["game_hash"]):
-		Globals.connected_clients[client_id] = Globals.persistent_client_data[data["game_hash"]]
-		Globals.connected_clients[client_id]["player_name"] = data["player_name"]
+		client_data = Globals.persistent_client_data[data["game_hash"]]
+		client_data["player_name"] = data["player_name"]
 	else:
-		data["position"] = Globals.spawn_position
-		Globals.connected_clients[client_id] = data
-		Globals.persistent_client_data[data["game_hash"]] = data
+		client_data = data
+		client_data["position"] = Globals.spawn_position
+		Globals.persistent_client_data[data["game_hash"]] = client_data
 	
 #	possibility  for a whitelist functionality
 	var game:Game = get_node(Globals.PATH_GAME_NODE)
-	rpc_id(client_id, "_access_granted", game.game_name, game.game_seed, Globals.connected_clients[client_id])
+	rpc_id(client_id, "_access_granted", game.game_name, game.game_seed, client_data)
 	
 	get_node(Globals.PATH_PLAYER_NODES).add_child(
-		game.create_player(str(client_id), data, client_id)
+		game.create_player(str(client_id), client_data, client_id)
 	)
 	
-	_sync_clients(client_id, data)
+	_sync_clients(client_id, client_data)

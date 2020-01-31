@@ -7,7 +7,6 @@ func _on_create_game_pressed():
 	
 	Globals.set_self_player_name("host")
 	Globals.set_self_peer_id(1)# Server hast always id 1
-	Globals.connected_clients[Globals.get_self_peer_id()] = Globals.get_self_data()
 	
 	_init_server()
 	
@@ -16,6 +15,8 @@ func _on_create_game_pressed():
 	game.game_seed = $Details/InputSeed.text if $Details/InputSeed.text != "" else _generate_seed()
 	get_node("/root").add_child(game)
 	game.init_game(Globals.get_self_peer_id(), Globals.get_self_data())
+	
+	Globals.connected_clients[Globals.get_self_peer_id()] = Globals.get_self_data()
 
 func _on_input_name_focus_exited():
 	$Details/InputSeed.set_text(_generate_seed())

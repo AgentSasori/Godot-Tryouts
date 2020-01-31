@@ -31,7 +31,12 @@ func _on_connection_failed(error):
 # Server closed peer
 func _on_server_disconnected():
 	Globals.debug(self.get_script().get_path(), "Server disconnected")
-	get_node(Globals.PATH_PLAYER_NODES).get_node(str(Globals.get_self_peer_id())).queue_free()
+#	Remove all connected client nodes
+	for clients in Globals.connected_clients:
+		get_node(Globals.PATH_PLAYER_NODES).get_node(str(clients)).queue_free()
+
+#	Reset connected clients dictionary
+	Globals.connected_clients = {}
 	get_tree().change_scene("res://src/scenes/MainMenu.tscn")
 
 # Send client data to server
@@ -56,7 +61,7 @@ remote func _unregister_client(client_id):
 
 # After access is granted init game
 remote func _access_granted(game_name, game_seed, data):
-#	maybe replaye complet self_data with data from server
+#	maybe replace complet self_data with data from server
 	Globals.set_self_position(data["position"])
 	Globals.connected_clients[Globals.get_self_peer_id()] = Globals.get_self_data()
 	
