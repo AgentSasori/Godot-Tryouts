@@ -1,10 +1,13 @@
 extends Node
 
-const NODE_PATH_GAME    = "/root/Game"
-const NODE_PATH_PLAYERS = NODE_PATH_GAME + "/Players"
-const NODE_PATH_ENEMIES = NODE_PATH_GAME + "/Enemies"
-const NODE_PATH_OBJECTS = NODE_PATH_GAME + "/Objects"
-const NODE_PATH_WORLDS  = NODE_PATH_GAME + "/Worlds"
+const SPAWN_WORD   = "SpawnWorld"
+
+const PATH_GAME_NODE        = "/root/Game"
+const PATH_PLAYER_NODES     = PATH_GAME_NODE + "/" + SPAWN_WORD + "/Players"
+const PATH_ENEMIE_NODES     = PATH_GAME_NODE + "/" + SPAWN_WORD + "/Enemies"
+const PATH_OBJECT_NODES     = PATH_GAME_NODE + "/" + SPAWN_WORD + "/Objects"
+const PATH_SPAWN_WORLD      = PATH_GAME_NODE + "/" + SPAWN_WORD
+const PATH_SPAWN_WORLD_MAP  = PATH_GAME_NODE + "/" + SPAWN_WORD + "/Map"
 
 var _config_file := "config.json"
 

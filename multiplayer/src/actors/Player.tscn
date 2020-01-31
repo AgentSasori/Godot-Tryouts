@@ -27,7 +27,6 @@ align = 1
 autowrap = true
 
 [node name="PlayerView" type="Camera2D" parent="."]
-current = true
 smoothing_enabled = true
 smoothing_speed = 10.0
 drag_margin_left = 0.0
