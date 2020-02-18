@@ -120,7 +120,7 @@ func _on_AnimatedSprite_animation_finished():
 		anim_player.play("idle")
 
 func _player_label_bottom(text:String):
-	$Label_bottom.text = "Vel: " + str(velocity) + "\n" + text
+	$Label_bottom.text = "Pos: " + str(position) + ", Vel: " + str(velocity) + "\n" + text
 
 # Check for near-area
 func _on_Area2D_area_entered(area):

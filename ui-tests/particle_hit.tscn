@@ -1,0 +1,17 @@
+[gd_scene format=2]
+
+[node name="particle_hit" type="CPUParticles2D"]
+rotation = -3.14762
+emitting = false
+amount = 64
+lifetime = 0.3
+one_shot = true
+explosiveness = 0.5
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2( 1, 1 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 100.0

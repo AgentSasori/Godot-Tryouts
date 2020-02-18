@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://objectbase.gd" type="Script" id=1]
+[ext_resource path="res://game-graphic-styles.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 78, 346, 70, 70 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 35.2959, 34.839 )
+
+[node name="Woodenbox" type="RigidBody2D" groups=[
+"can_burn",
+"has_inventory",
+]]
+gravity_scale = 0.0
+linear_damp = 3.0
+angular_damp = 3.0
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = SubResource( 1 )
+region_rect = Rect2( 78, 346, 70, 70 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )

@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://inventory.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -22.0737
+margin_top = -52.3609
+margin_right = -22.0737
+margin_bottom = -52.3609
+rect_pivot_offset = Vector2( 21.8421, 51.2632 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = -12.6524
+margin_top = 0.225937
+margin_right = 60.3476
+margin_bottom = 14.2259
+text = "INVENTORY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="ItemList" parent="."]
+margin_left = 9.53674e-07
+margin_top = 12.449
+margin_right = 40.0
+margin_bottom = 52.4491
+grow_horizontal = 2
+grow_vertical = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=1]
+[ext_resource path="res://StaticBody2D.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Keyhole.tscn" type="PackedScene" id=3]
+[ext_resource path="res://fire.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sword.tscn" type="PackedScene" id=5]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 493.684, 274.737 )
+
+[node name="sword" parent="KinematicBody2D" instance=ExtResource( 5 )]
+position = Vector2( 0.482529, -1.08475 )
+
+[node name="Woodenbox" parent="." instance=ExtResource( 2 )]
+position = Vector2( 295.549, 207.169 )
+inventory = {
+
+}
+
+[node name="Woodenbox2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 663.706, 121.646 )
+inventory = {
+
+}
+
+[node name="Woodenbox3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 504.877, 98.0252 )
+inventory = {
+
+}
+
+[node name="Woodenbox4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 420.983, 98.0252 )
+inventory = {
+
+}
+
+[node name="Woodenbox5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 336.274, 98.0252 )
+inventory = {
+
+}
+
+[node name="Woodenbox6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 254.009, 98.0252 )
+inventory = {
+
+}
+
+[node name="Keyhole" parent="." instance=ExtResource( 3 )]
+position = Vector2( 707.743, 211.251 )
+
+[node name="Keyhole2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 779.07, 211.251 )
+
+[node name="fire_1" parent="." instance=ExtResource( 4 )]
+position = Vector2( 613.633, 324.107 )
+rotation = -0.328981

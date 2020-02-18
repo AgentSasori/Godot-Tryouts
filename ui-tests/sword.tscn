@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://sword_04.png" type="Texture" id=1]
+[ext_resource path="res://sword.gd" type="Script" id=2]
+[ext_resource path="res://particle_hit.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Animation" id=2]
+resource_name = "swing"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -44.9999, -96.0664, 10.1709, -44.9999 ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 37.5367, 12.0301 )
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 13.6102
+height = 49.6793
+
+[node name="sword" type="StaticBody2D" groups=[
+"equipment",
+"weapon",
+]]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.198995, 0.0224145 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 1 )
+offset = Vector2( 695.348, -58.3316 )
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/swing = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 100.655, -7.3003 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 100.478, -8.28115 )
+rotation = 1.57079
+shape = SubResource( 4 )
+
+[node name="particle_hit" parent="." instance=ExtResource( 3 )]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

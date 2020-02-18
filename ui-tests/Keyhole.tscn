@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://game-graphic-styles.png" type="Texture" id=1]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 518, 266, 70, 70 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 35.2959, 34.839 )
+
+[node name="Keyhole" type="StaticBody2D" groups=[
+"has_inventory",
+]]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = SubResource( 1 )
+region_rect = Rect2( 78, 346, 70, 70 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
