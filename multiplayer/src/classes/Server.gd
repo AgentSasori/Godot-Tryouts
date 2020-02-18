@@ -37,7 +37,7 @@ func _on_client_disconnected(disconnected_client_id):
 	Globals.persistent_client_data = Globals.connected_clients[disconnected_client_id]
 	
 #	Remove player node
-	get_node(Globals.NODE_PATH_PLAYERS).get_node(str(disconnected_client_id)).queue_free()
+	get_node(Globals.PATH_PLAYER_NODES).get_node(str(disconnected_client_id)).queue_free()
 	
 #	Remove client from connected client list
 	Globals.connected_clients.erase(disconnected_client_id)
@@ -48,35 +48,41 @@ func _on_client_disconnected(disconnected_client_id):
 
 # Send client data of newly connected client to existing clients
 # and existing clients to newly connected client
-func _sync_clients(new_client_id, new_client_data):
-#	If client was already on server use persisten client data. If client was not on the server
-#	before use new client data
-	if Globals.persistent_client_data.has(new_client_data["game_hash"]):
-		Globals.connected_clients[new_client_id] = Globals.persistent_client_data[new_client_data["game_hash"]]
-		Globals.connected_clients[new_client_id]["player_name"] = new_client_data["player_name"]
-	else:
-		new_client_data["position"] = Globals.spawn_position
-		Globals.connected_clients[new_client_id] = new_client_data
-		Globals.persistent_client_data[new_client_data["game_hash"]] = new_client_data
-	
+func _sync_clients(new_client_id, new_client_data):	
 	for client_id in Globals.connected_clients:
 		if not get_tree().is_network_server():
 			Globals.debug(self.get_script().get_path(), "Send new client data to existing client " + str(client_id))
 			# Send new client data to existing clients
 			rpc_id(client_id, "_register_client", new_client_id, new_client_data)
 		
-		Globals.debug(self.get_script().get_path(), "Send existing client data to new client " + str(new_client_id))
+		Globals.debug(self.get_script().get_path(), "Send existing client data to new client " + str(new_client_id) + "\n" + str(Globals.connected_clients[client_id]))
 		#Send existing clients data to new client
 		rpc_id(new_client_id, "_register_client", client_id, Globals.connected_clients[client_id])
+	
+	Globals.connected_clients[new_client_id] = new_client_data
 
 # Recieve client data from new connected client
 remote func _recieve_client_data(data):
 	Globals.debug(self.get_script().get_path(), "Recieving client data:\n" + str(data))
+	var client_id   := get_tree().get_rpc_sender_id()
+	var client_data := {}
+	
+#	If client was already on server use persisten client data. If client was not on the server
+#	before use new client data
+	if Globals.persistent_client_data.has(data["game_hash"]):
+		client_data = Globals.persistent_client_data[data["game_hash"]]
+		client_data["player_name"] = data["player_name"]
+	else:
+		client_data = data
+		client_data["position"] = Globals.spawn_position
+		Globals.persistent_client_data[data["game_hash"]] = client_data
 	
 #	possibility  for a whitelist functionality
+	var game:Game = get_node(Globals.PATH_GAME_NODE)
+	rpc_id(client_id, "_access_granted", game.game_name, game.game_seed, client_data)
 	
-	get_node(Globals.NODE_PATH_PLAYERS).add_child(
-		get_node(Globals.NODE_PATH_GAME).create_player(str(get_tree().get_rpc_sender_id()), data, get_tree().get_rpc_sender_id())
+	get_node(Globals.PATH_PLAYER_NODES).add_child(
+		game.create_player(str(client_id), client_data, client_id)
 	)
 	
-	_sync_clients(get_tree().get_rpc_sender_id(), data)
+	_sync_clients(client_id, client_data)

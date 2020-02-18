@@ -1,21 +1,28 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/themes/RobotoRegular.tres" type="Theme" id=1]
 [ext_resource path="res://src/scenes/MainMenu.gd" type="Script" id=2]
 [ext_resource path="res://src/scenes/NewGameMenu.gd" type="Script" id=3]
 [ext_resource path="res://src/scenes/LoadGameMenu.gd" type="Script" id=4]
 [ext_resource path="res://src/scenes/JoinServerMenu.gd" type="Script" id=5]
+[ext_resource path="res://assets/icons/dice.svg" type="Texture" id=6]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.176471, 0.176471, 0.176471, 0.490196 )
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.215686, 0.215686, 0.215686, 1 )
+color = Color( 0, 0.380392, 0.380392, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -76,8 +83,8 @@ mouse_default_cursor_shape = 2
 size_flags_vertical = 3
 text = "Quit"
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
+[node name="PanelContainer" type="Panel" parent="."]
+visible = false
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -85,6 +92,11 @@ margin_left = -514.0
 margin_top = 40.0
 margin_right = -40.0
 margin_bottom = -40.0
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="NewGameMenu" type="Control" parent="PanelContainer"]
 visible = false
@@ -93,11 +105,82 @@ margin_top = 7.0
 margin_right = 467.0
 margin_bottom = 513.0
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="PanelContainer/NewGameMenu"]
 margin_right = 87.0
 margin_bottom = 28.0
 text = "New Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Details" type="Control" parent="PanelContainer/NewGameMenu"]
+margin_top = 34.0
+margin_right = 460.0
+margin_bottom = 192.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelName" type="Label" parent="PanelContainer/NewGameMenu/Details"]
+margin_right = 46.0
+margin_bottom = 28.0
+size_flags_horizontal = 2
+size_flags_vertical = 0
+text = "Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputName" type="LineEdit" parent="PanelContainer/NewGameMenu/Details"]
+modulate = Color( 0.705882, 0.705882, 0.705882, 1 )
+margin_top = 32.0
+margin_right = 352.0
+margin_bottom = 70.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+max_length = 32
+clear_button_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelSeed" type="Label" parent="PanelContainer/NewGameMenu/Details"]
+margin_top = 88.0
+margin_right = 460.0
+margin_bottom = 116.0
+size_flags_vertical = 0
+text = "Seed"
+
+[node name="InputSeed" type="LineEdit" parent="PanelContainer/NewGameMenu/Details"]
+modulate = Color( 0.705882, 0.705882, 0.705882, 1 )
+margin_top = 120.0
+margin_right = 352.0
+margin_bottom = 158.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+editable = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewRandomeSeed" type="TextureButton" parent="PanelContainer/NewGameMenu/Details/InputSeed"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -31.0
+margin_top = -10.5
+margin_right = -10.0
+margin_bottom = 10.5
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CreateGame" type="Button" parent="PanelContainer/NewGameMenu"]
 anchor_left = 1.0
@@ -107,6 +190,9 @@ anchor_bottom = 1.0
 margin_left = -151.0
 margin_top = -34.0
 text = "Create Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="LoadGameMenu" type="Control" parent="PanelContainer"]
 visible = false
@@ -125,30 +211,43 @@ text = "Load Game"
 visible = false
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 657.0
+margin_right = 467.0
 margin_bottom = 513.0
+rect_clip_content = true
 script = ExtResource( 5 )
-
-[node name="Label" type="Label" parent="PanelContainer/JoinServerMenu"]
-margin_right = 40.0
-margin_bottom = 28.0
-text = "Join Server"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ServerList" type="VBoxContainer" parent="PanelContainer/JoinServerMenu"]
 anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 33.0
-custom_constants/separation = 10
+margin_top = 34.0
+margin_bottom = 468.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="GameHash" type="Label" parent="."]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 50.0
-margin_bottom = 38.0
+[node name="Label" type="Label" parent="PanelContainer/JoinServerMenu"]
+margin_right = 95.0
+margin_bottom = 28.0
+text = "Join Server"
+
+[node name="AddServer" type="Button" parent="PanelContainer/JoinServerMenu"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -151.0
+margin_top = -32.0
+margin_bottom = -2.0
+text = "Add Server"
 [connection signal="pressed" from="Menu/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="Menu/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="Menu/LoadGame" to="." method="_on_load_game_pressed"]
 [connection signal="pressed" from="Menu/JoinServer" to="." method="_on_join_server_pressed"]
 [connection signal="pressed" from="Menu/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Menu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="focus_exited" from="PanelContainer/NewGameMenu/Details/InputName" to="PanelContainer/NewGameMenu" method="_on_input_name_focus_exited"]
+[connection signal="pressed" from="PanelContainer/NewGameMenu/Details/InputSeed/NewRandomeSeed" to="PanelContainer/NewGameMenu" method="_on_new_randome_seed_pressed"]
 [connection signal="pressed" from="PanelContainer/NewGameMenu/CreateGame" to="PanelContainer/NewGameMenu" method="_on_create_game_pressed"]
+[connection signal="pressed" from="PanelContainer/JoinServerMenu/AddServer" to="PanelContainer/JoinServerMenu" method="_on_add_server_pressed"]
